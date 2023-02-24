@@ -13,7 +13,7 @@ canvas=tk.Tk()
 canvas.title("Music Player")
 canvas.geometry("500x500")
 canvas.config(bg='white')
-rootpath ="../playerMusic-master/Music"
+rootpath ="/Music"
 pattern ="*.mp3"
 
 
@@ -33,7 +33,7 @@ random_img = tk.PhotoImage(file="random.png")
 def select():
     global loop
     label.config(text=listBox.get("anchor"))
-    mixer.music.load(rootpath + "\\" + listBox.get("anchor"))
+    mixer.music.load(rootpath + "/" + listBox.get("anchor"))
     mixer.music.play()
     if loop:
         mixer.music.play(-1)
@@ -46,7 +46,7 @@ def next():
     next_song_name=listBox.get(next_song)
     label.config(text=next_song_name)
 
-    mixer.music.load(rootpath + "\\" + next_song_name)
+    mixer.music.load(rootpath + "/" + next_song_name)
     mixer.music.play()
 
     listBox.select_clear(0, "end")
@@ -60,7 +60,7 @@ def prec():
 
     label.config(text= prec_song_name)
 
-    mixer.music.load(rootpath +"\\"+ prec_song_name)
+    mixer.music.load(rootpath +"/"+ prec_song_name)
     mixer.music.play()
 
     listBox.select_clear(0,'end')
@@ -100,7 +100,7 @@ def set_pos(val):
 def play_random():
         random_song = random.choice(listBox.get(0, "end"))
         label.config(text=random_song)
-        mixer.music.load(rootpath + "\\" + random_song)
+        mixer.music.load(rootpath + "/" + random_song)
         mixer.music.play()
         listBox.select_clear(0, "end")
         listBox.activate(random_song)
