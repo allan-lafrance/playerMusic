@@ -13,7 +13,7 @@ canvas=tk.Tk()
 canvas.title("Music Player")
 canvas.geometry("500x500")
 canvas.config(bg='white')
-rootpath ="../playerMusic-master/Music"
+rootpath ="./Music"
 pattern ="*.mp3"
 
 
